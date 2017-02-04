@@ -7,8 +7,30 @@ app.use(morgan('combined'));
 
 var articles={
     'article-One':{
-    title: 'Article1',
-    heading: 'article 1',
+    title:'Article1',
+    heading:'article 1',
+    date:'3 feb 2017',
+    content:`
+     <p>
+           content goes here.   content goes here.  content goes here.
+    </p>
+       <p>
+           content goes here.   content goes here.  content goes here.
+        </p>`},
+    'article-Two':{
+    title:'Article 2',
+    heading:'article 2',
+    date:'3 feb 2017',
+    content:`
+     <p>
+           content goes here.   content goes here.  content goes here.
+    </p>
+       <p>
+           content goes here.   content goes here.  content goes here.
+        </p>`},
+    'article-Three':{
+    title:'Article3',
+    heading:'article 3',
     date:'3 feb 2017',
     content:`
      <p>
@@ -25,41 +47,41 @@ function createTemplate(data){
     var date=data.date;
     var content=data.content;
     var htmlTemplate =`
-<html>
-    <head>
-        <title>
-           ${title}
-        </title>
-        <meta name = "viewport" content="width=device-width, initial-scale=1">
-       
-        <link href="/ui/style.css" rel="stylesheet" />   
+            <html>
+                <head>
+                    <title>
+                       ${title}
+                    </title>
+                    <meta name = "viewport" content="width=device-width, initial-scale=1">
+                   
+                    <link href="/ui/style.css" rel="stylesheet" />   
+                        
             
-
-    </head>
-    <body>
-        <div class="container">
-        <div>
-            <a href="/" > home </a>
-            
-        </div>
-            <hr/>
-            
-        
-            <h3>
-                   ${heading}
-            </h3>
-            
-            <div>
-                ${date}
-            </div>
-       
-       
-       <div > 
-        ${content}
-       </div>
-      </div>
-    </body>
-</html>
+                </head>
+                <body>
+                    <div class="container">
+                    <div>
+                        <a href="/" > home </a>
+                        
+                    </div>
+                        <hr/>
+                        
+                    
+                        <h3>
+                               ${heading}
+                        </h3>
+                        
+                        <div>
+                            ${date}
+                        </div>
+                   
+                   
+                   <div > 
+                    ${content}
+                   </div>
+                  </div>
+                </body>
+            </html>
 `;
     
     return htmlTemplate;
