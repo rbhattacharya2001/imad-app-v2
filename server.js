@@ -7,21 +7,16 @@ app.use(morgan('combined'));
 
 
 var articleOne={
-    
     title: 'Article1',
     heading: 'article 1',
     date:'3 feb 2017',
     content:`
      <p>
            content goes here.   content goes here.  content goes here.
-           
-           
-       </p>
+    </p>
        <p>
            content goes here.   content goes here.  content goes here.
-           
-           
-       </p>`
+        </p>`
 };
 
 function createTemplate(data){
