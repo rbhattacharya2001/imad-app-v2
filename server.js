@@ -16,33 +16,11 @@ var articles={
     </p>
        <p>
            content goes here.   content goes here.  content goes here.
-        </p>`},
-    'article-Two':{
-    title: 'Article 2',
-    heading: 'article 2',
-    date:'3 feb 2017',
-    content:`
-     <p>
-           content goes here.   content goes here.  content goes here.
-    </p>
-       <p>
-           content goes here.   content goes here.  content goes here.
-        </p>`},
-    'article-Three':{
-    title: 'Article3',
-    heading: 'article 3',
-    date:'3 feb 2017',
-    content:`
-     <p>
-           content goes here.   content goes here.  content goes here.
-    </p>
-       <p>
-           content goes here.   content goes here.  content goes here.
         </p>`}
 };
 
 function createTemplate(data){
-    
+    var title = data.title;
     var heading=data.heading;
     var date=data.date;
     var content=data.content;
