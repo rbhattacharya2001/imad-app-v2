@@ -82,7 +82,7 @@ app.get('/counter',function(req, res) {
 
 app.get('/:articleName', function (req, res) {
    var articleName = req.params.articleName;
-    console.log("artclename " + articleName);
+   
   res.send(createTemplate(articles[articleName]));
 });
 
