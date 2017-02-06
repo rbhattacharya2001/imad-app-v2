@@ -11,10 +11,10 @@ button.onclick= function (){
             if (request.readyState==XMLHttpRequest.DONE){
                   console.log('req status ' +request.status );
                 if (request.status==200){
-                var counter = request.responseText;
-                counter=counter+1;
-                var span = document.getElementById('count');
-                span.innerHTML=counter.toString();
+                        var counter = request.responseText;
+                        counter=counter+1;
+                        var span = document.getElementById('count');
+                        span.innerHTML=counter.toString();
              }
             }
         };
