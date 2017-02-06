@@ -73,18 +73,20 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/:articleName', function (req, res) {
-   var articleName = req.params.articleName;
-    console.log("artclename " + articleName);
-  res.send(createTemplate(articles[articleName]));
-});
-
 var counter=0;
 app.get('/counter',function(req, res) {
     
     counter=counter+1;
     res.send(counter.toString());
 });
+
+app.get('/:articleName', function (req, res) {
+   var articleName = req.params.articleName;
+    console.log("artclename " + articleName);
+  res.send(createTemplate(articles[articleName]));
+});
+
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
