@@ -37,8 +37,8 @@ button.onclick= function (){
             list+='<li>'+names[i]+'</li>';
           
         }
-        console.log('after loop ' +list );
-        alert("I am an alert box!" + list);
+       
+        
        var ul=document.getElementById('namelist') ;
        ul.innerHTML=list;
     };  
