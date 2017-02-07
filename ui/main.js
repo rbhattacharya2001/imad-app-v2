@@ -31,8 +31,9 @@ button.onclick= function (){
         var list='';
         for (var i=0;i<names.length;i++){
             list+='<li>'+names[i]+'</li>';
+           console.log('name ' +names[i] );
         }
-        
+        console.log('after loop ' +list );
        var ul=document.getElementById('nameList') ;
        ul.innerHTML=list;
         
