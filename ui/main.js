@@ -22,6 +22,8 @@ button.onclick= function (){
         request.open('GET', 'http://rbhattacharya2001.imad.hasura-app.io/counter', true);
         request.send(null);
 };
+
+alert("I am an alert box!");
      console.log('outside submit' );
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
