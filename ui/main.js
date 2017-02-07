@@ -39,7 +39,7 @@ button.onclick= function (){
         }
         console.log('after loop ' +list );
         alert("I am an alert box!" + list);
-       var ul=document.getElementById('nameList') ;
+       var ul=document.getElementById('namelist') ;
        ul.innerHTML=list;
     };  
         
