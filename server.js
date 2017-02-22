@@ -10,6 +10,7 @@ var articles={
     title:'Article1',
     heading:'article 1',
     date:'3 feb 2017',
+
     content:`
      <p>
            content goes here.   content goes here.  content goes here.
@@ -75,6 +76,7 @@ app.get('/', function (req, res) {
 
 var names=[];
 app.get('/submit-name', function(req, res){
+  
     var name =req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
@@ -82,12 +84,30 @@ app.get('/submit-name', function(req, res){
     
 });
 
+var comments=[];
+app.get('/submit-comment', function(req, res){
+  console.log(`submit come!`);
+    var comment =req.query.comment;
+    comments.push(comment);
+    res.send(JSON.stringify(comments));
+    
+    
+});
+
+
 var counter=0;
 app.get('/counter',function(req, res) {
     
     counter=counter+1;
     res.send(counter.toString());
 });
+
+
+app.get('/article-Two',function(req, res) {
+ 
+  res.sendFile(path.join(__dirname, 'ui', 'article-Two.html'));
+});
+
 
 app.get('/:articleName', function (req, res) {
    var articleName = req.params.articleName;
@@ -111,6 +131,9 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
+app.get('/ui/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
