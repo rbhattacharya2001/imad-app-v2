@@ -103,9 +103,9 @@ app.get('/counter',function(req, res) {
 });
 
 
-app.get('/article-Two',function(req, res) {
+app.get('/article-two',function(req, res) {
  
-  res.sendFile(path.join(__dirname, 'ui', 'article-Two.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
 
 
