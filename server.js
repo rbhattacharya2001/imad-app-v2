@@ -88,6 +88,7 @@ app.get('/', function (req, res) {
 var pool =new Pool(config);
 
 app.get('/test-db',function(req, res) {
+    console.log(`Inside test-db`);
     
     pool.query('SELECT * FROM test',function(err, result){
         
@@ -96,7 +97,7 @@ app.get('/test-db',function(req, res) {
         }else
         {
             res.send(JSON.stringyfy(result));
-        
+        3
          }
     });
 });
