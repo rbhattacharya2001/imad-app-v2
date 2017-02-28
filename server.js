@@ -65,7 +65,7 @@ function createTemplate(data){
                         </h3>
                         
                         <div>
-                            ${date}
+                            ${date.toDateStrinmg()}
                         </div>
                    
                    
