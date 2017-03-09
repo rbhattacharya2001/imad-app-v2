@@ -92,6 +92,14 @@ app.get('/hash/:input', function (req, res){
     res.send(hashedString);
 });
 
+
+app.get('/create-user',function (req, res){
+    
+    var salt=crypto.getRandomBytes(128).toString('hex');
+    
+    var dbString=hash(password, salt);
+});
+
 function hash(input,salt){
     
     var hashed=crypto.pbkdf2Sync(input,salt, 10000,512,'sha512');
