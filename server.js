@@ -111,7 +111,7 @@ app.post('/create-user',function (req, res){
             res.send('user created' +username);
         
          }  
-    }
+    });
 });
 
 function hash(input,salt){
