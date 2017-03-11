@@ -114,7 +114,7 @@ app.post('/create-user',function (req, res){
     });
 });
 
----
+
 app.post('/login',function (req, res){
     
     var username=req.body.username;
@@ -127,14 +127,21 @@ app.post('/login',function (req, res){
             res.status(500).send(err.toString());
         }else
         {
-            
-            
-            res.send('user created' +username);
+            if (result.rows.length===0){
+                res.send(403).send('username/password is imvalid');
+            }
+            else{
+                
+                var dbString =result.rows[0].password;
+                var salt=dbString.split('$')[2];
+                var hashedPassword = hash(password, salt);
+                res.send('user created' +username);
+            }
         
          }  
     });
 });
---
+
 
 
 
