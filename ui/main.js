@@ -31,10 +31,7 @@ button.onclick= function (){
         
        
        
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        console.log(username) ;
-        console.log(password);
+       
         var request = new XMLHttpRequest();
         
         request.onreadystatechange=function(){
@@ -66,7 +63,12 @@ button.onclick= function (){
             }  // 200
        
           };  
-        
+          
+          
+           var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username) ;
+        console.log(password);
        request.open('POST', 'http://rbhattacharya2001.imad.hasura-app.io/login' , true);
         // request.open('GET', 'http://localhost:8080/submit-name?name=' +name, true);
         
