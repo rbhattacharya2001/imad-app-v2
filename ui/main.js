@@ -71,7 +71,7 @@ button.onclick= function (){
         // request.open('GET', 'http://localhost:8080/submit-name?name=' +name, true);
         
         request.setRequestHeader('Content-Type','application/json');
-        request.send(JSON.stringyfy({username:username, password:password})); 
+        request.send(JSON.stringify({username:username, password:password})); 
         
     };
 
