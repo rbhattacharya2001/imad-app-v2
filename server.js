@@ -114,6 +114,30 @@ app.post('/create-user',function (req, res){
     });
 });
 
+---
+app.post('/login',function (req, res){
+    
+    var username=req.body.username;
+    var password=req.body.password;
+    
+    
+    
+    pool.query('SElect * from "user" username = $1' , [username], function (err, result){
+      if (err){
+            res.status(500).send(err.toString());
+        }else
+        {
+            
+            
+            res.send('user created' +username);
+        
+         }  
+    });
+});
+--
+
+
+
 function hash(input,salt){
     
     var hashed=crypto.pbkdf2Sync(input,salt, 10000,512,'sha512');
