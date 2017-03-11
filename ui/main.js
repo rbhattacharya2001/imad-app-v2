@@ -1,4 +1,4 @@
-var button = document.getElementById('counter');
+/*-var button = document.getElementById('counter');
 var counter=0;
 
 
@@ -22,7 +22,7 @@ button.onclick= function (){
         request.open('GET', 'http://rbhattacharya2001.imad.hasura-app.io/counter', true);
         request.send(null);
 }; 
-
+*/
 
      
    
@@ -31,16 +31,28 @@ button.onclick= function (){
         
        
        
-        var nameInput = document.getElementById('name');
-        var name = nameInput.value;   
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username) ;
+        console.log(password);
         var request = new XMLHttpRequest();
         
         request.onreadystatechange=function(){
             if (request.readyState==XMLHttpRequest.DONE){
                   
-                if (request.status==200){
+                if (request.status===200){
                     
-                     var names =request.responseText;
+                    console.log('user logged in');
+                    alert('Logged in successfully');
+                }else(request.status===403){
+                    alert('username and password incorrect');
+                }else(request.status===403){
+                 alert('username and password incorrect');
+                    
+                }
+                
+                    
+                     /*var names =request.responseText;
                      names=JSON.parse(names);
                      var list='';
                      for (var i=0;i<names.length;i++){
@@ -49,15 +61,15 @@ button.onclick= function (){
                          }//for
                       
                         var ul=document.getElementById('namelist') ;
-                         ul.innerHTML=list;
+                         ul.innerHTML=list;*/
                  } //request status
             }  // 200
        
           };  
         
-       request.open('GET', 'http://rbhattacharya2001.imad.hasura-app.io/submit-name?name=' +name, true);
+       request.open('POST', 'http://rbhattacharya2001.imad.hasura-app.io/login' , true);
         // request.open('GET', 'http://localhost:8080/submit-name?name=' +name, true);
-        request.send(null); 
+        request.send(JSON.stringyfy({username:username, password:password})); 
         
     };
 
