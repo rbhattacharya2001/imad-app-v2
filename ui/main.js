@@ -44,10 +44,10 @@ button.onclick= function (){
                     
                     console.log('user logged in');
                     alert('Logged in successfully');
-                }else(request.status===403){
+                }else if(request.status===403){
                     alert('username and password incorrect');
-                }else(request.status===403){
-                 alert('username and password incorrect');
+                }else if (request.status===500){
+                 alert('something wrong');
                     
                 }
                 
@@ -61,8 +61,8 @@ button.onclick= function (){
                          }//for
                       
                         var ul=document.getElementById('namelist') ;
-                         ul.innerHTML=list;*/
-                 } //request status
+                         ul.innerHTML=list;
+                 } //request status */
             }  // 200
        
           };  
