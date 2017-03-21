@@ -120,7 +120,7 @@ app.post('/login',function (req, res){
     var username=req.body.username;
     var password=req.body.password;
     
-    
+    var myres="cred inc";
     
     pool.query('SElect * from "user" WHERE username = $1' , [username], function (err, result){
       if (err){
@@ -128,7 +128,9 @@ app.post('/login',function (req, res){
         }else
         {
             if (result.rows.length===0){
-                res.send(403).send('username/password is imvalid');
+                 myres="username/password is imvalid";
+                res.send(403).send(myres);
+                 res.send(JSON.stringify(myres));
             }
             else{
                 
@@ -137,11 +139,15 @@ app.post('/login',function (req, res){
                 var hashedPassword = hash(password, salt);
                 
                 if (hashedPassword===dbString){
-                res.send('credentials correct');
+                    myres="credentials correct";
+                res.send(myres);
+                 res.send(JSON.stringify(myres));
+                
                 }
                 else
                 {
-                     res.send(403).send('credentials correct');
+                     res.send(403).send(myres);
+                      res.send(JSON.stringify(myres));
                 }
             }
         
