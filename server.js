@@ -140,8 +140,8 @@ app.post('/login',function (req, res){
                 
                 if (hashedPassword===dbString){
                     myres="credentials correct";
-                res.send(myres);
-                //res.send(JSON.stringify(myres));
+                //8res.send(myres);
+                res.send(JSON.stringify(myres));
                 
                 }
                 else
