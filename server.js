@@ -129,8 +129,8 @@ app.post('/login',function (req, res){
         {
             if (result.rows.length===0){
                  myres="username/password is imvalid";
-                res.send(403).send(myres);
-                // res.send(JSON.stringify(myres));
+               // res.send(403).send(myres);
+                res.send(JSON.stringify(myres));
             }
             else{
                 
@@ -146,8 +146,8 @@ app.post('/login',function (req, res){
                 }
                 else
                 {
-                    res.send(403).send(myres);
-                      //res.send(JSON.stringify(myres));
+                   // res.send(403).send(myres);
+                      res.send(JSON.stringify(myres));
                 }
             }
         
