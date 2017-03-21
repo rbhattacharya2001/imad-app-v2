@@ -147,15 +147,15 @@ app.post('/login',function (req, res){
                 if (hashedPassword===dbString){
                     myres="credentials correct";
                 //res.send(myres);
-                    oMyOBject1 = {"message":myres};
-                res.send(JSON.stringify(oMyOBject1));
+                    oMyOBject = {"message":myres};
+                res.send(JSON.stringify(oMyOBject));
                 
                 }
                 else
                 {
                    // res.send(403).send(myres);
                    
-                      res.send(JSON.stringify(oMyOBject1));
+                      res.send(JSON.stringify(oMyOBject));
                 }
             }
         
