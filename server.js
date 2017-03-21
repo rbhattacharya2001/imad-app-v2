@@ -121,6 +121,7 @@ app.post('/login',function (req, res){
     var password=req.body.password;
     
     var myres="cred inc";
+     var oMyOBject = {"message":myres};
      res.contentType('application/json');
     pool.query('SElect * from "user" WHERE username = $1' , [username], function (err, result){
       if (err){
@@ -130,7 +131,12 @@ app.post('/login',function (req, res){
             if (result.rows.length===0){
                  myres="username/password is imvalid";
                // res.send(403).send(myres);
-                res.send(JSON.stringify(myres));
+               
+               
+               
+               
+                 oMyOBject = {"message":myres};
+                res.send(JSON.stringify(oMyOBject));
             }
             else{
                 
@@ -140,14 +146,16 @@ app.post('/login',function (req, res){
                 
                 if (hashedPassword===dbString){
                     myres="credentials correct";
-                //8res.send(myres);
-                res.send(JSON.stringify(myres));
+                //res.send(myres);
+                    oMyOBject1 = {"message":myres};
+                res.send(JSON.stringify(oMyOBject1));
                 
                 }
                 else
                 {
                    // res.send(403).send(myres);
-                      res.send(JSON.stringify(myres));
+                   
+                      res.send(JSON.stringify(oMyOBject1));
                 }
             }
         
