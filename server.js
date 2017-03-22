@@ -237,14 +237,17 @@ app.get('/articles/:articleName', function (req, res) {
             if (result.rows.length===0){
                 res.status(404).send('Artivle not found');
             }else{
-                
+                var arrArticleData=[];
                 var articleData =result.rows[0];
                 var tem={"id": articleData.id, 
                 "title": articleData.title, 
                 "heading":articleData.heading,
                 "date":articleData.date,
                 "content": articleData.content};
-                res.send(JSON.stringify(tem));
+                
+                arrArticleData.push(articleData);
+                
+                res.send(JSON.stringify(arrArticleData));
           }
          }
 }); 
