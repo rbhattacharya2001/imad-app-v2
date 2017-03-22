@@ -237,7 +237,9 @@ app.get('/articles/:articleName', function (req, res) {
                 res.status(404).send('Artivle not found');
             }else{
                 var articleData =result.rows[0];
-                res.send(createTemplate(articleData));
+                var tem={"message":createTemplate(articleData)};
+                
+                res.send(JSON.stringify(rem));
           }
          }
 }); 
