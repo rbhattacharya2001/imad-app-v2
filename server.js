@@ -242,7 +242,7 @@ app.get('/articles/:articleName', function (req, res) {
                 var tem={"id": articleData.id, 
                 "title": articleData.title, 
                 "heading":articleData.heading,
-                "date":(articleData.date).toDateString,
+                "date":articleData.date,
                 "content": articleData.content};
                 
                 arrArticleData.push(articleData);
