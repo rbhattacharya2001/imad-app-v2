@@ -239,7 +239,11 @@ app.get('/articles/:articleName', function (req, res) {
             }else{
                 
                 var articleData =result.rows[0];
-                var tem={"id": articleData.id, "title": articleData.title, "heading":articleData.heading, "date":articleData.date,"content": articleData.content};
+                var tem={"id": articleData.id, 
+                "title": articleData.title, 
+                "heading":articleData.heading,
+                "date":articleData.date,
+                "content": articleData.content};
                 res.send(JSON.stringify(tem));
           }
          }
