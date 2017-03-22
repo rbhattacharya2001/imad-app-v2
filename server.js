@@ -239,7 +239,7 @@ app.get('/articles/:articleName', function (req, res) {
                 var articleData =result.rows[0];
                 var tem={"message":createTemplate(articleData)};
                 
-                res.send(JSON.stringify(rem));
+                res.send(JSON.stringify(tem));
           }
          }
 }); 
